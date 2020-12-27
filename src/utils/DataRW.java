@@ -21,13 +21,9 @@ public class DataRW {
         return courseIS;
     }
 
-    public static void writeCourseISToFile(Scanner scanner, CourseIS courseIS) {
+    public static void writeCourseISToFile(CourseIS courseIS) {
         try {
-            System.out.println("Enter file name:\n");
-            String fileName = scanner.nextLine();
-            scanner.nextLine(); //
-            if (fileName.isEmpty()) fileName = "2labDB";
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName + ".lib"));
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("2labDB.lib"));
             out.writeObject(courseIS);
             out.close();
         } catch (IOException e) {

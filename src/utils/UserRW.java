@@ -11,7 +11,7 @@ public class UserRW {
     public static void WriteUserDataToFile(User user) {
         try {
             String nameOfFile = "Users.lib";
-            new File("C:/Users/vpi/IdeaProjects/guicourse/" + nameOfFile);
+            new File("C:/Users/vpi/IdeaProjects/Lab3V2/" + nameOfFile);
 
             BufferedWriter outStream = new BufferedWriter(new FileWriter(nameOfFile, true));
 
@@ -23,7 +23,7 @@ public class UserRW {
     }
 
     public static ArrayList<User> GetAllUsers(){
-        File file = new File("C:/Users/vpi/IdeaProjects/CourseIS/Users.lib");
+        File file = new File("C:/Users/vpi/IdeaProjects/Lab3V2/Users.lib");
         BufferedReader br = null;
         ArrayList<User> users = new ArrayList<User>();
         try {
@@ -42,7 +42,7 @@ public class UserRW {
     }
 
     public static User ReadUser(String username){
-        File file = new File("C:/Users/vpi/IdeaProjects/guicourse/Users.lib");
+        File file = new File("C:/Users/vpi/IdeaProjects/Lab3V2/Users.lib");
         BufferedReader br = null;
         ArrayList<User> users = new ArrayList<User>();
         try {

@@ -23,7 +23,6 @@ public class LoginPage implements Initializable {
     public Button logBut;
     public Button regBut;
     public Button exitBut;
-
     private User loggedUser = null;
 
     @Override
@@ -115,6 +114,9 @@ public class LoginPage implements Initializable {
         MainWindowUser mainWindow = loader.getController();
 
         mainWindow.setUser(loggedUser);
+
+        mainWindow.setUser(loggedUser);
+        mainWindow.setLoggedAs(loggedUser.getLogin());
 
         Stage stage = (Stage)logBut.getScene().getWindow();
         stage.setTitle("User window");

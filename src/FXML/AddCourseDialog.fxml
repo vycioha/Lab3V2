@@ -12,13 +12,13 @@
 
 <AnchorPane maxHeight="200.0" maxWidth="300.0" minHeight="200.0" minWidth="300.0" prefHeight="320.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FxControllers.AddCourseDialog">
     <children>
-        <VBox alignment="CENTER" layoutX="131.0" layoutY="50.0" prefHeight="234.0" prefWidth="318.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <VBox alignment="CENTER" layoutX="-5.0" layoutY="50.0" prefHeight="190.0" prefWidth="300.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
             <children>
                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter course information" />
                 <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                     <children>
-                        <Label alignment="CENTER_RIGHT" minWidth="100.0" prefWidth="101.0" text="Title" />
-                        <TextField fx:id="courseTitle" prefHeight="25.0" prefWidth="178.0" />
+                        <Label alignment="CENTER_RIGHT" minWidth="45.0" prefHeight="17.0" prefWidth="45.0" text="Title" />
+                        <TextField fx:id="courseTitle" prefHeight="25.0" prefWidth="216.0" promptText="title" />
                     </children>
                     <padding>
                         <Insets right="30.0" />
@@ -26,8 +26,8 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                     <children>
-                        <Label alignment="CENTER_RIGHT" minWidth="100.0" text="Start date" />
-                  <DatePicker fx:id="courseStartDate" />
+                        <Label alignment="CENTER_RIGHT" minWidth="100.0" prefHeight="17.0" prefWidth="214.0" text="Start date" />
+                        <DatePicker fx:id="courseStartDate" promptText="DD/MM/YYY" />
                     </children>
                     <padding>
                         <Insets right="30.0" />
@@ -35,8 +35,8 @@
                 </HBox>
                 <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
                     <children>
-                        <Label alignment="CENTER_RIGHT" minWidth="100.0" text="End date" />
-                  <DatePicker fx:id="courseEndDate" />
+                        <Label alignment="CENTER_RIGHT" minWidth="100.0" prefHeight="17.0" prefWidth="214.0" text="End date" />
+                        <DatePicker fx:id="courseEndDate" promptText="DD/MM/YYY" />
                     </children>
                     <padding>
                         <Insets right="30.0" />
@@ -50,7 +50,7 @@
                         <Insets right="30.0" />
                     </padding>
                 </HBox>
-                  <Button fx:id="AddCourseButtonId" mnemonicParsing="false" onAction="#AddCourseButton" text="Add" />
+                <Button fx:id="AddCourseButtonId" mnemonicParsing="false" onAction="#AddCourseToList" text="Add" />
             </children>
         </VBox>
     </children>

@@ -73,7 +73,7 @@ public class Start {
                             manageUsers(scanner, courseIS, loggedUser);
                             break;
                         case "save":
-                            writeCourseISToFile(scanner, courseIS);
+                            writeCourseISToFile(courseIS);
                             break;
                         case "logout":
 //                            writeCourseISToFile(scanner, courseIS);
@@ -161,7 +161,7 @@ public class Start {
                                 courseIS.RemoveCourseByName(courseName);
                                 courseIS.getAllCourses().add(course);
 
-                                writeCourseISToFile(scanner, courseIS);
+                                writeCourseISToFile(courseIS);
                             }else {
                                 System.out.println("Course does not exist");
                             }
@@ -243,7 +243,7 @@ public class Start {
                         courseIS.RemoveUserByName(user.getLogin());
                         courseIS.getAllUsers().add(userUpdated);
 
-                        writeCourseISToFile(scanner, courseIS);
+                        writeCourseISToFile(courseIS);
                         break;
                     case "prt":
                         break;

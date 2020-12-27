@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.User;
 
@@ -16,11 +17,23 @@ import java.util.ResourceBundle;
 public class MainWindowUser implements Initializable {
 
     public Button logOutBtn;
+    public Text profName;
+    public Text profSurname;
+    public Text profUsername;
+    public Text profYear;
+    public Text profBank;
     private User user;
+    public Text loggedAs;
+    public Text setProfileInformation = null;
 
     public void setUser(User user){
         this.user = user;
     }
+
+    public void setLoggedAs(String username){
+        loggedAs.setText("logged as: " + username);
+    }
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
