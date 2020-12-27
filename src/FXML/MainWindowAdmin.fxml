@@ -24,13 +24,15 @@
                                     <items>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                             <children>
-                                                <ListView fx:id="CourseList" layoutX="14.0" layoutY="14.0" onMouseClicked="#PopulateEnrolledUserList" prefHeight="292.0" prefWidth="149.0" />
+                                                <ListView fx:id="CourseList" layoutX="14.0" layoutY="14.0" onMouseClicked="#PopulateEnrolledUserList" prefHeight="292.0" prefWidth="149.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0" />
+                                    <Text layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All courses:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
                                             </children>
                                         </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                             <children>
-                                                <ListView fx:id="UserList" layoutX="14.0" layoutY="14.0" onMouseClicked="#GetUserInfoToRemoveFromCourse" prefHeight="259.0" prefWidth="390.0" />
+                                                <ListView fx:id="UserList" layoutX="14.0" layoutY="14.0" onMouseClicked="#GetUserInfoToRemoveFromCourse" prefHeight="259.0" prefWidth="390.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0" />
                                                 <Button layoutX="146.0" layoutY="277.0" mnemonicParsing="false" onAction="#RemoveUserFromCourse" text="Remove from course" />
+                                    <Text layoutX="26.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Users that are enrolled in specified course:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
                                             </children>
                                         </AnchorPane>
                                     </items>
@@ -51,7 +53,7 @@
                                                 <Button layoutX="170.0" layoutY="125.0" mnemonicParsing="false" onAction="#DeleteSelectedCourse" text="Delete" />
                                                 <ListView fx:id="ManageCoursesAllUsers" layoutX="21.0" layoutY="158.0" onMouseClicked="#GetUserInformation" prefHeight="105.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="180.0" />
                                                 <Button layoutX="21.0" layoutY="269.0" mnemonicParsing="false" onAction="#AddSelectedUserToCourse" text="Add to course" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" />
-                                                <Text layoutX="19.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All users" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="160.0" />
+                                                <Text layoutX="19.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All user:s" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="160.0" />
                                                 <Text layoutX="20.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All courses:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0" />
                                             </children>
                                         </AnchorPane>
@@ -62,7 +64,7 @@
                                                 <Text layoutX="10.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Start date:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="75.0" />
                                                 <Button layoutX="285.0" layoutY="90.0" mnemonicParsing="false" onAction="#UpdateCourseInformation" text="Update" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="90.0" />
                                                 <Text layoutX="150.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="End date:" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="75.0" />
-                                                <Button layoutX="197.0" layoutY="277.0" mnemonicParsing="false" text="Manage course folders" />
+                                                <Button layoutX="197.0" layoutY="277.0" mnemonicParsing="false" text="Manage course folders" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                                                 <DatePicker fx:id="updateFieldEndDate" layoutX="150.0" layoutY="90.0" prefHeight="25.0" prefWidth="123.0" promptText="MM/DD/YYYY" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="90.0" />
                                                 <DatePicker fx:id="updateFieldStartDate" layoutX="10.0" layoutY="90.0" prefHeight="25.0" prefWidth="123.0" promptText="MM/DD/YYYY" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="90.0" />
                                                 <Text layoutX="145.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course information:" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" />
