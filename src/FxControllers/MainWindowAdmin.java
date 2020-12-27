@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static utils.DataRW.writeCourseISToFile;
+import static utils.UserRW.ReadUser;
 
 //implements Initializable -> Inteface, kuris pradiniam fxml formos langui priskirs reikšmes.
 public class MainWindowAdmin implements Initializable {
@@ -44,6 +45,10 @@ public class MainWindowAdmin implements Initializable {
     private CourseIS courseIS = new CourseIS();
     private ArrayList<User> allUsers = new ArrayList<User>();
     private String OriginalCourseTitleToUpdate = null;
+    private String nameSurname = null;
+    private String username = null;
+    private String nameSurnameToRemove = null;
+    private String usernameToRemove = null;
 
     public void setCourseList(ArrayList<Course> courseList){
         CourseList.getItems().clear();
@@ -206,6 +211,76 @@ public class MainWindowAdmin implements Initializable {
             updateFieldStartDate.setValue(course.getCourseStart());
 
             OriginalCourseTitleToUpdate = updateFieldCourseTitle.getText();
+        }
+    }
+
+    public void GetUserInformation(MouseEvent mouseEvent) {
+        String[] userInfo = ManageCoursesAllUsers.getSelectionModel().getSelectedItem().split("-");
+
+        nameSurname = userInfo[0].trim();
+        username = userInfo[1].trim();
+    }
+
+    public void AddSelectedUserToCourse(ActionEvent actionEvent) {
+
+        if(OriginalCourseTitleToUpdate != null){
+            Course course = courseIS.getCourseByName(OriginalCourseTitleToUpdate);
+            courseIS.getAllCourses().remove(course);
+
+            User user = ReadUser(username);
+            course.EnrollUserToACourse(user);
+
+            courseIS.getAllCourses().add(course);
+            writeCourseISToFile(courseIS);
+
+            setCourseList(courseIS.getAllCourses());
+            setAdminManageAllCourses(courseIS.getAllCourses());
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle(null);
+            alert.setHeaderText(null);
+            alert.setContentText("Course not selected");
+
+            alert.showAndWait();
+        }
+
+    }
+
+    public void GetUserInfoToRemoveFromCourse(MouseEvent mouseEvent) {
+
+        String selection = UserList.getSelectionModel().getSelectedItem();
+
+        if(selection != null){
+            String[] userInfo = selection.split("-");
+
+            nameSurnameToRemove = userInfo[0].trim();
+            usernameToRemove = userInfo[1].trim();
+        }
+    }
+
+    public void RemoveUserFromCourse(ActionEvent actionEvent) {
+        String courseName = CourseList.getSelectionModel().getSelectedItem();
+        if(courseName != null){
+
+            UserList.getItems().clear();
+
+            Course course = courseIS.getCourseByName(courseName);
+
+            course.RemoveUserFromACourse(usernameToRemove);
+
+            writeCourseISToFile(courseIS);
+
+            ArrayList<String> enrolledUserNames = new ArrayList<String>();
+
+            course.GetEnrolledUsers().forEach(x -> enrolledUserNames.add(x.getName() + " " + x.getSurname() + " - " + x.getLogin()));
+
+            ObservableList<String> users = FXCollections.observableArrayList(enrolledUserNames);
+
+            UserList.getItems().addAll(users);
+        }
+        else{
+            UserList = new ListView<>();
         }
     }
 }

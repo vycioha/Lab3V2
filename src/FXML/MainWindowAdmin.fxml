@@ -29,8 +29,8 @@
                                         </AnchorPane>
                                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                                             <children>
-                                                <ListView fx:id="UserList" layoutX="14.0" layoutY="14.0" prefHeight="259.0" prefWidth="390.0" />
-                                                <Button layoutX="146.0" layoutY="277.0" mnemonicParsing="false" text="Remove from course" />
+                                                <ListView fx:id="UserList" layoutX="14.0" layoutY="14.0" onMouseClicked="#GetUserInfoToRemoveFromCourse" prefHeight="259.0" prefWidth="390.0" />
+                                                <Button layoutX="146.0" layoutY="277.0" mnemonicParsing="false" onAction="#RemoveUserFromCourse" text="Remove from course" />
                                             </children>
                                         </AnchorPane>
                                     </items>
@@ -49,8 +49,8 @@
                                                 <ListView fx:id="AdminManageAllCourses" layoutX="21.0" layoutY="14.0" onMouseClicked="#FillCourseInformationFields" prefHeight="105.0" prefWidth="200.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0" />
                                                 <Button fx:id="OpenAddCourseDialogBtn" layoutX="21.0" layoutY="125.0" mnemonicParsing="false" onAction="#OpenAddCourseDialog" text="Add" />
                                                 <Button layoutX="170.0" layoutY="125.0" mnemonicParsing="false" onAction="#DeleteSelectedCourse" text="Delete" />
-                                                <ListView fx:id="ManageCoursesAllUsers" layoutX="21.0" layoutY="158.0" prefHeight="105.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="180.0" />
-                                                <Button layoutX="21.0" layoutY="269.0" mnemonicParsing="false" text="Add to course" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" />
+                                                <ListView fx:id="ManageCoursesAllUsers" layoutX="21.0" layoutY="158.0" onMouseClicked="#GetUserInformation" prefHeight="105.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="180.0" />
+                                                <Button layoutX="21.0" layoutY="269.0" mnemonicParsing="false" onAction="#AddSelectedUserToCourse" text="Add to course" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" />
                                                 <Text layoutX="19.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All users" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="160.0" />
                                                 <Text layoutX="20.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="All courses:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="10.0" />
                                             </children>
