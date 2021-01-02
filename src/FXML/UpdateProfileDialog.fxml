@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="200.0" maxWidth="300.0" minHeight="200.0" minWidth="300.0" prefHeight="320.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FxControllers.UpdateProfileDialog">
+    <children>
+        <VBox alignment="CENTER" layoutX="-5.0" layoutY="50.0" prefHeight="190.0" prefWidth="300.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="-20.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <Label alignment="TOP_LEFT" contentDisplay="TOP" minWidth="45.0" prefHeight="17.0" prefWidth="100.0" text="Username:" />
+                        <TextField fx:id="newName" prefHeight="25.0" prefWidth="100.0" promptText="username" />
+                    </children>
+                    <padding>
+                        <Insets right="30.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="228.0" spacing="10.0">
+                    <padding>
+                        <Insets right="30.0" />
+                    </padding>
+               <children>
+                  <Label alignment="TOP_LEFT" contentDisplay="TOP" minWidth="45.0" prefHeight="17.0" prefWidth="101.0" text="Bank Acc. Number:" />
+                  <TextField fx:id="newBank" prefHeight="25.0" prefWidth="100.0" promptText="bank acc. number" />
+               </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                    <padding>
+                        <Insets right="30.0" />
+                    </padding>
+               <children>
+                  <Label alignment="TOP_LEFT" contentDisplay="TOP" minWidth="45.0" prefHeight="17.0" prefWidth="102.0" text="Password:" />
+                  <PasswordField fx:id="newPass" prefHeight="25.0" prefWidth="100.0" promptText="password" />
+               </children>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets right="30.0" />
+                    </padding>
+                </HBox>
+                <Button fx:id="UpdateProfileButtonId" layoutX="-10.0" mnemonicParsing="false" onAction="#AddCourseButton" text="Update" />
+            </children>
+        </VBox>
+          <Text layoutX="35.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can update the following information:" x="1.0" />
+    </children>
+</AnchorPane>

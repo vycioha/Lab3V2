@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="200.0" maxWidth="300.0" minHeight="115.0" minWidth="300.0" prefHeight="115.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FxControllers.CreateFileDialog">
+    <children>
+        <VBox alignment="CENTER" layoutX="-5.0" layoutY="50.0" prefHeight="108.0" prefWidth="315.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="-20.0" AnchorPane.topAnchor="5.0">
+            <children>
+                <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                    <children>
+                        <Label alignment="TOP_LEFT" contentDisplay="TOP" minWidth="45.0" prefHeight="17.0" prefWidth="100.0" text="Name:" />
+                        <TextField fx:id="newFileName" prefHeight="25.0" prefWidth="100.0" promptText="file name" />
+                    </children>
+                    <padding>
+                        <Insets right="30.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets right="30.0" />
+                    </padding>
+                </HBox>
+                <Button layoutX="-10.0" mnemonicParsing="false" onAction="#AddFileBtn" text="Add" />
+            </children>
+        </VBox>
+          <Text layoutX="35.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter the following information" x="1.0" />
+    </children>
+</AnchorPane>
