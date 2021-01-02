@@ -38,6 +38,7 @@ public class MainWindowAdmin implements Initializable {
     public DatePicker updateFieldEndDate;
     public DatePicker updateFieldStartDate;
     public ListView<String> ManageCoursesAllUsers;
+    public Button openCourseFoldersBtn;
     private User user;
 
     private ObservableList<Course> courseObservableList = FXCollections.observableArrayList();
@@ -281,6 +282,34 @@ public class MainWindowAdmin implements Initializable {
         }
         else{
             UserList = new ListView<>();
+        }
+    }
+
+    public void gotoCourseFolders(ActionEvent actionEvent) throws IOException {
+
+        Course course = courseIS.getCourseByName(OriginalCourseTitleToUpdate);
+
+        if(course != null){
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/FolderFileManager.fxml"));
+
+            Parent root = loader.load();
+
+            FolderFileManager folderFileManager = loader.getController();
+
+            folderFileManager.setCourse(course);
+
+            Stage stage = (Stage)openCourseFoldersBtn.getScene().getWindow();
+            stage.setTitle("Folder manager");
+            stage.setScene(new Scene(root));
+            stage.show();
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle(null);
+            alert.setHeaderText(null);
+            alert.setContentText("Nothing was selected or course does not exist.");
+
+            alert.showAndWait();
         }
     }
 }
