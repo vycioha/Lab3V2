@@ -297,6 +297,7 @@ public class MainWindowAdmin implements Initializable {
             FolderFileManager folderFileManager = loader.getController();
 
             folderFileManager.setCourse(course);
+            folderFileManager.setUser(user);
 
             Stage stage = (Stage)openCourseFoldersBtn.getScene().getWindow();
             stage.setTitle("Folder manager");

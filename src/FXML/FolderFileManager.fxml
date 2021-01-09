@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FxControllers.FolderFileManager">
    <children>
       <Button layoutX="527.0" layoutY="361.0" mnemonicParsing="false" text="Exit" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
@@ -27,6 +26,7 @@
                   <Text layoutX="24.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Course files:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0" />
                   <Button layoutX="225.0" layoutY="363.0" mnemonicParsing="false" onAction="#deleteFile" text="Delete" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
                   <Button layoutX="167.0" layoutY="363.0" mnemonicParsing="false" onAction="#createFile" text="Create" />
+                  <Button fx:id="bckBtn" layoutX="120.0" layoutY="363.0" mnemonicParsing="false" onAction="#goBackToCourseManager" text="Back" />
                </children>
             </AnchorPane>
         </items>

@@ -82,7 +82,6 @@
                 </Tab>
             </tabs>
         </TabPane>
-        <Button layoutX="454.0" layoutY="362.0" mnemonicParsing="false" text="Save to file" />
         <Button fx:id="logOutBtn" layoutX="535.0" layoutY="362.0" mnemonicParsing="false" onAction="#LogOut" text="Logout" />
         <ImageView fitHeight="47.0" fitWidth="54.0" layoutX="14.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
             <image>

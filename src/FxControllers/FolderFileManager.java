@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import model.Course;
 import model.CourseIS;
 import model.Folder;
+import model.User;
 import utils.DataRW;
 
 import java.io.IOException;
@@ -29,8 +30,10 @@ public class FolderFileManager implements Initializable {
     public ListView<String> folderList;
     public ListView<String> fileList;
     public Button createFolderBtn;
+    public Button bckBtn;
 
     private Course course;
+    private User loggedUser;
     private CourseIS courseIS = new CourseIS();
 
     @Override
@@ -40,6 +43,10 @@ public class FolderFileManager implements Initializable {
 
     public void setCourse(Course course){
         this.course = course;
+    }
+
+    public void setUser(User user){
+        loggedUser = user;
     }
 
     public void getFiles(MouseEvent mouseEvent) {
@@ -193,5 +200,21 @@ public class FolderFileManager implements Initializable {
         ObservableList<String> folders = FXCollections.observableArrayList(courseFolderList);
 
         folderList.getItems().addAll(folders);
+    }
+
+    public void goBackToCourseManager(ActionEvent actionEvent) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../FXML/MainWindowAdmin.fxml"));
+
+        Parent root = loader.load();
+
+        MainWindowAdmin mainWindow = loader.getController();
+
+        mainWindow.setUser(loggedUser);
+        mainWindow.setLoggedAs(loggedUser.getLogin());
+
+        Stage stage = (Stage)bckBtn.getScene().getWindow();
+        stage.setTitle("Admin window");
+        stage.setScene(new Scene(root));
+        stage.show();
     }
 }
