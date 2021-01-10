@@ -18,6 +18,7 @@ import utils.UserRW;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -222,7 +223,7 @@ public class MainWindowAdmin implements Initializable {
         username = userInfo[1].trim();
     }
 
-    public void AddSelectedUserToCourse(ActionEvent actionEvent) {
+    public void AddSelectedUserToCourse(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
 
         if(OriginalCourseTitleToUpdate != null){
             Course course = courseIS.getCourseByName(OriginalCourseTitleToUpdate);

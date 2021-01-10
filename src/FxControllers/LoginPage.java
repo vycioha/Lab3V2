@@ -12,6 +12,7 @@ import model.User;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import static utils.UserRW.ReadUser;
@@ -30,7 +31,7 @@ public class LoginPage implements Initializable {
 
     }
 
-    public void validateUser(ActionEvent actionEvent) throws IOException {
+    public void validateUser(ActionEvent actionEvent) throws IOException, SQLException, ClassNotFoundException {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         boolean userIsValid = false;
         String username = usrField.getText();

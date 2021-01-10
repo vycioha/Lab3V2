@@ -8,6 +8,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -81,7 +82,40 @@ public class UserRW {
         return users;
     }
 
-    public static User ReadUser(String username){
+    public static void ReadUserFromDb(String username) throws SQLException, ClassNotFoundException {
+
+        Connection connection = databaseUtil.connectToDb();
+
+//        String sqlScript = "SELECT Id,Name,Surname,Login,Password,Year,BankAccount,IsModerator FROM Users;";
+//
+//        Statement statement = connection.createStatement();
+//        ResultSet rs2 = statement.executeQuery(sqlScript);
+//
+//        while(rs2.next()){
+//            System.out.println(rs2.getString("Name"));
+//            System.out.println(rs2.getString(2));
+//        }
+
+
+        String sqlScript2 = "SELECT TOP 1 Id,Name,Surname,Login,Password,Year,BankAccount,IsModerator FROM Users WHERE Login = ?";
+
+        PreparedStatement getUserQuery = connection.prepareStatement(sqlScript2);
+        getUserQuery.setString(1, username);
+        ResultSet rs = getUserQuery.executeQuery();
+
+        while(rs.next()){
+            String name = rs.getString(2);
+            System.out.println(name);
+        }
+
+
+//        User user = new User()
+    }
+
+    public static User ReadUser(String username) throws SQLException, ClassNotFoundException {
+
+        ReadUserFromDb(username);
+
         File file = new File("../Lab3V3/Users.lib");
         BufferedReader br = null;
         ArrayList<User> users = new ArrayList<User>();

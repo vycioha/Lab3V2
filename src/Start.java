@@ -1,6 +1,7 @@
 import model.*;
 import utils.DataRW;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ import static utils.UserRW.WriteUserDataToFile;
 
 public class Start {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -44,7 +45,7 @@ public class Start {
         }
     }
 
-    public static void program(Scanner scanner, User loggedUser) {
+    public static void program(Scanner scanner, User loggedUser) throws SQLException, ClassNotFoundException {
 
         CourseIS courseIS =
                 new CourseIS(
@@ -110,7 +111,7 @@ public class Start {
             }
     }
 
-    private static User LoginManager(Scanner scanner, String command){
+    private static User LoginManager(Scanner scanner, String command) throws SQLException, ClassNotFoundException {
 
         User loggedUser = null;
 
@@ -257,7 +258,7 @@ public class Start {
         }
     }
 
-    private static void manageCourse(Scanner scanner, CourseIS courseIS, User user) {
+    private static void manageCourse(Scanner scanner, CourseIS courseIS, User user) throws SQLException, ClassNotFoundException {
 
         String courseCmd = "";
 
@@ -627,7 +628,7 @@ public class Start {
         return user;
     }
 
-    private static User Login(Scanner scanner) {
+    private static User Login(Scanner scanner) throws SQLException, ClassNotFoundException {
         System.out.println("Enter username");
         String username = scanner.next();
         System.out.println("Enter password");
@@ -644,7 +645,7 @@ public class Start {
         }
     }
 
-    private static User FindUser(String username){
+    private static User FindUser(String username) throws SQLException, ClassNotFoundException {
 
         return ReadUser(username);
     }

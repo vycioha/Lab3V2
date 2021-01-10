@@ -3,8 +3,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import utils.databaseUtil;
 
-    public class StartApp extends Application {
+import java.sql.Connection;
+
+public class StartApp extends Application {
 
         public static void main(String[] args) {
             launch(args);
@@ -13,6 +16,8 @@ import javafx.stage.Stage;
         @Override
         public void start(Stage primaryStage) throws Exception{
             //Primary stage (mum automatiškai sugeneruojamas) -> STARTINIS LANGAS, nuo kurio prasideda programos gyvenimas.
+
+//            Connection connection = databaseUtil.connectToDb();
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/LoginPage.fxml"));
 
